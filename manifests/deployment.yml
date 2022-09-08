@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: awaischeckcarsdemoapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awaischeckcarsdemoapp
+  template:
+    metadata:
+      labels:
+        app: awaischeckcarsdemoapp 
+    spec:
+      containers:
+        - name: awaischeckcarsdemoapp 
+          image: acrpipe.azurecr.io/awaischeckcarsdemoapp
+          ports:
+          - containerPort: 8080
